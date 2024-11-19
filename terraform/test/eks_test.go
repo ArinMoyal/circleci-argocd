@@ -1,9 +1,9 @@
 package test
 
 import (
-        "fmt"
 	"testing"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestEKSCluster(t *testing.T) {
