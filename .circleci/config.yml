@@ -13,10 +13,10 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker Image
-          command: docker build -t ghcr.io/${GITHUB_USERNAME}/weather-webapp:${CIRCLE_BUILD_NUM} ./app
+          command: docker build -t ghcr.io/arinmoyal/weather-webapp:${CIRCLE_BUILD_NUM} ./app
       - run:
           name: Run Docker Image
-          command: docker run --rm -d -p 5000:5000 --name webapp-weather ghcr.io/${GITHUB_USERNAME}/weather-webapp:${CIRCLE_BUILD_NUM}
+          command: docker run --rm -d -p 5000:5000 --name webapp-weather ghcr.io/arinmoyal/weather-webapp:${CIRCLE_BUILD_NUM}
       - run:
           name: Test Docker container
           command: |
@@ -59,7 +59,7 @@ jobs:
           command: echo "${GITHUB_TOKEN}" | docker login ghcr.io -u ${GITHUB_USERNAME} --password-stdin
       - run:
           name: Push Docker Image to GitLab Container Registry
-          command: docker push ghcr.io/${GITHUB_USERNAME}/weather-webapp:${CIRCLE_BUILD_NUM}
+          command: docker push ghcr.io/arinmoyal/weather-webapp:${CIRCLE_BUILD_NUM}
 
   checkov:
     docker:
