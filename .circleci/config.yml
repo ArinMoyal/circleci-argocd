@@ -71,7 +71,7 @@ jobs:
           command: pip install checkov
       - run:
           name: Run Checkov on Terraform files
-          command: checkov -d /terraform
+          command: checkov -d ./terraform
 
   terratest:
     docker:
