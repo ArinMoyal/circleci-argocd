@@ -19,6 +19,6 @@ module "eks" {
 
   vpc_id                   = var.vpc
   subnet_ids               = var.subnets
-  control_plane_subnet_ids = var. control_plane_subnet_ids
+  control_plane_subnet_ids = var.control_plane_subnet_ids
   eks_managed_node_groups  = var.node_groups
 }
