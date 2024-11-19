@@ -107,14 +107,11 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
-          name: Change Directory Into Terraform Directory
-          command: cd terraform
-      - run:
-          name: Initialize Terraform
-          command: terraform init
-      - run:
-          name: Create EKS Cluster
-          command: terraform apply -auto-approve
+          name: Initialize Terraform And Create EKS Cluster
+          command: |
+            cd terraform
+            terraform init
+            terraform apply -auto-approve
 
   deploy_argocd:
     docker:
