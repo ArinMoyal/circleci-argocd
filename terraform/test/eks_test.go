@@ -18,7 +18,7 @@ func TestEKSCluster(t *testing.T) {
 	terraform.Validate(t, terraformOptions)
 	planOutput := terraform.Plan(t, terraformOptions)
 
-	assert.Contains(t, planOutput, "eks_cluster", "The plan should contain an EKS cluster resource"
+	assert.Contains(t, planOutput, "eks_cluster", "The plan should contain an EKS cluster resource")
 	assert.Contains(t, planOutput, "eks_cluster_name", "The plan should contain the eks_cluster_name output")
 	assert.Contains(t, planOutput, "eks_cluster_endpoint", "The plan should contain the eks_cluster_endpoint output")
 	assert.Contains(t, planOutput, "Plan:", "The plan should not propose destroying resources unless intended")
