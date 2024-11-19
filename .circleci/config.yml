@@ -107,6 +107,9 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
+          name: Change Directory Into Terraform Directory
+          command: cd terraform
+      - run:
           name: Initialize Terraform
           command: terraform init
       - run:
