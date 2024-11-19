@@ -168,7 +168,7 @@ workflows:
       - build_test_publish:
           context: slack-secrets
       - checkov
-      - terratest
+      - terratest:
           requires:
             - checkov
       - eks_cluster:
